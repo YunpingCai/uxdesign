@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility and Product Details</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .section {
+            width: 48%;
+            padding: 15px;
+            margin: 20px;
+        }
+        .shipping-section {
+            width: 100%;
+            padding: 15px;
+            margin: 20px;
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0;
+            padding: 0;
+        }
+        .sectiontitle-image {
+            display: block;
+            margin: 0; /* Minimal space between title and image */
+            width: 25%; /* Adjust as needed */
+            height: auto;
+            margin-top: 0;
+            padding: 0;
+        }
+        .highlight {
+            background-color: #ffd700;
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #6666cc;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+
+
+        
+        /* Header Section*/
+        .header-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-logo {
+            max-width: 50%; /* Adjust as needed */
+            margin-bottom: 15px;
+        }
+
+
+        /* Ribbon Section*/
+        .button-ribbon {
+            display: flex;
+            justify-content: center;
+            background-color: #2635D9; /* Adjust color as needed */
+            padding: 20px 0;
+            margin-bottom: 5px;
+        }
+
+        .ribbon-button {
+            background-color: #FFEA00; /* Adjust button color as needed */
+            border: none;
+            color: black;
+            padding: 15px 20px;
+            margin: 0 30px;
+            max-width: auto;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ribbon-button:hover {
+            background-color: #000000; /* Adjust hover color as needed */
+            color: #fff;
+
+        }
+
+
+        /* Carousel Section */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .carousel-image {
+            max-width: 100%; /* Adjust as needed */
+            height: auto;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 0; /* Align the button to the top */
+            bottom: 0; /* Align the button to the bottom */
+            height: 100%; /* Make the button extend from top to bottom */
+            width: 40px; /* Adjust width to make it square-shaped */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 0; /* Remove rounded corners */
+            z-index: 1;
+            display: flex;
+            align-items: center; /* Center the content vertically */
+            justify-content: center; /* Center the content horizontally */
+            opacity: 0; /* Half transparent by default */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+
+        .carousel-btn:hover {
+            opacity: 1; /* Fully opaque when hovered */
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+
+
+        /* Title Section*/
+        .product-title-section {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .brand-logo {
+            max-width: 15%; /* Adjust size as needed */
+            margin-right: 10px;
+        }
+
+        .blue-icon {
+            max-width: 10%; /* Adjust size as needed */
+            margin-right: 10px;
+        }
+
+        .product-title {
+            font-size: 40px; /* Adjust as needed */
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+    
+
+        /* Compatibility and Product Details*/
+        .product-details-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .product-details-list li {
+            margin-bottom: 40px; /* Adjust spacing as needed */
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-icon {
+            width: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+
+        .product-detail-images {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px; /* Adjust the spacing between images as needed */
+            margin-bottom: 20px; /* Adds space between the images and the list */
+        }
+
+        .product-icon {
+            flex: 1;
+            max-width: 48%; /* Ensures each image takes nearly half the width of the section */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .product-fitment-icon {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+        }
+
+        .product-fitment-icon-container {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+
+        
+        /* Shipping & Return and Warranty*/
+        .shipping-map {
+            max-width: 100%; /* Full width */
+            margin: 15px 0;
+        }
+
+        .shipping-note {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+
+
+        /* Support */
+        .support-text {
+            color: #666; /* Adjust as needed */
+            margin-bottom: 20px;
+        }
+
+        .business-hours {
+            color: #000; /* Adjust as needed */
+            margin-top: 10px;
+        }
+
+        .ask-question-btn {
+            color: #FFEA00; /* Text color */
+            background-color: transparent; /* Make the background transparent */
+            border: 2px solid #FFEA00; /* Add border with the specified color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 5px 10px; /* Add padding for a button-like appearance */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 14px; /* Adjust font size */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        .ask-question-btn:hover {
+            background-color: #FFEA00; /* Change background color on hover */
+            color: #000; /* Change text color on hover */
+        }
+
+
+
+        /* Featured Category*/
+        .featuredcaetgory-section{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .featuredcategory-title{
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .category-grid {
+            gap: 20px; /* Space between grid items */
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0; /* Light gray background */
+            border: 1px solid #ddd; /* Optional border */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .category-image {
+            background-color: #d3d3d3; /* Placeholder color for image */
+            width: 100%;
+            height: 100px; /* Adjust as needed */
+        }
+
+        .category-label {
+            background-color: #0000cc; /* Button background color */
+            color: #ffffff;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        
+
+
+
+        /* Brand Story Section */
+        .brandstory-section {
+            background-image: url('test1/AboutUs-Background-Black.png'); /* Path to your background image */
+            background-size: cover; /* Make sure the image covers the entire section */
+            background-position: center; /* Center the image */
+            padding: 40px; /* Add padding for text spacing */
+            color: #000000; /* Text color for readability */
+            border-radius: 10px; /* Optional: Rounded corners */
+            margin-top: 30px; /* Space from the top */
+            position: relative;
+            text-align: left; /* Align text to the left */
+        }
+
+        .brandstory-text {
+            background-color: rgba(255, 255, 255, 0.9); /* Optional: Semi-transparent background for better text visibility */
+            padding: 20px; /* Add padding to the text block */
+            border-radius: 15px; /* Optional: Rounded corners */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+    @media only screen and (max-width: 768px) {
+        .container {
+            display: block; /* Stacks sections vertically */
+        }
+
+        .section {
+            width: 100%; /* Full width for mobile view */
+            margin: 10px 0; /* Reduce margin for smaller screens */
+        }
+
+        .section-title {
+            font-size: 16px; /* Reduce title size */
+            margin-bottom: 20px;
+        }
+
+        .button-ribbon {
+            flex-direction: row; /* Stack buttons vertically */
+            gap: 5px; /* Add space between buttons */
+        }
+
+        .ribbon-button {
+            margin: 5px 5px; /* Adjust margin for stacked buttons */
+            width: auto; /* Make buttons wider */
+            padding: 6px 12px; /* Reduce padding for smaller buttons */
+            font-size: 12px; /* Reduce font size */
+        }
+
+        .carousel-btn {
+            padding: 8px; /* Adjust button size */
+            font-size: 16px; /* Reduce button font size */
+        }
+
+        .carousel-image {
+            max-width: 100%; /* Ensure images fit within screen */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .product-title-section {
+            flex-direction: column; /* Stack logo, icons, and title vertically */
+            text-align: center; /* Center align text */
+        }
+
+        .brand-logo {
+            max-width: 50%;
+            margin-bottom: 5px;
+        }
+
+        .blue-icon {
+            max-width: 25%; /* Reduce size of logos */
+            margin: 0 auto 10px auto; /* Center logos with bottom margin */
+        }
+
+        .product-title {
+            font-size: 24px; /* Reduce font size for smaller screens */
+        }
+
+        
+        .category-grid {
+            grid-template-columns: repeat(2, 1fr); /* Change grid layout to 2 columns */
+            gap: 15px; /* Adjust spacing between grid items */
+        }
+
+        .banner-section img {
+            width: 100%; /* Ensure banner fits screen */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+        .shipping-map {
+            max-width: 100%;
+        }
+    }
+
+    /* Additional @media query for very small screens (max-width: 480px) */
+    @media only screen and (max-width: 480px) {
+        .section-title {
+            font-size: 18px; /* Reduce title size further */
+        }
+
+        .product-title {
+            font-size: 20px; /* Adjust product title size */
+        }
+
+        .ribbon-button {
+            padding: 8px 10px; /* Adjust padding */
+            font-size: 12px; /* Reduce font size */
+        }
+
+        .category-grid {
+            grid-template-columns: 1fr; /* Change grid to single column */
+        }
+
+        .category-item img {
+            height: auto; /* Let images scale naturally */
+        }
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Header & Ribbon & Carousel Section -->
+<div class="header-section">
+    <img src="test1/AutoShack-Logo-600x120px.png" alt="AutoShack Logo" class="header-logo">
+    <div class="button-ribbon">
+        <button class="ribbon-button">Visit Our Store</button>
+        <button class="ribbon-button">Add to Favorite Seller</button>
+        <button class="ribbon-button">Ask Question</button>
+        <button class="ribbon-button">Subscribe for Trends</button>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel">
+            <img src="test1/header1.png" alt="Header 1" class="carousel-image">
+            <img src="test1/header2.png" alt="Header 2" class="carousel-image">
+            <img src="test1/header3.png" alt="Header 3" class="carousel-image">
+        </div>
+        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function nextSlide() {
+        const carousel = document.querySelector('.carousel');
+        const totalImages = document.querySelectorAll('.carousel-image').length;
+        currentIndex = (currentIndex + 1) % totalImages;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function prevSlide() {
+        const carousel = document.querySelector('.carousel');
+        const totalImages = document.querySelectorAll('.carousel-image').length;
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+
+
+<!-- Product Title Section -->
+<div class="product-title-section">
+    <img src="test1/AutoShack-Vertical-Logo-300dpi-No-Red-.png" alt="AutoShack Logo" class="brand-logo">
+    <img src="test1/TRIANGLE LOGOS-BLUE.png" alt="Icon" class="blue-icon">
+    <h1 class="product-title">Front Drilled Slotted Brake Rotors Black Set of 2 Driver and Passenger Side Rotor</h1>
+    <img src="test1/TRIANGLE LOGOS-YELLOW.png" alt="Icon" class="blue-icon">
+</div>
+
+
+
+<div class="container">
+    <!-- Compatibility Section -->
+    <div class="section">
+        <div class="section-title">COMPATIBILITY</div>
+        <img src="test1/TITLE LINE.png" class="sectiontitle-image">
+        <div class="product-fitment-icon-container">
+            <img src="test1/Front Fitment.png" alt="Rear fitment" class="product-fitment-icon">
+        </div>
+        <div class="highlight">This product only fits the following vehicles:</div>
+        <ul>
+            <div class=accordion-item-bd>
+                <div class=accordion-text>
+                    <div class=compatibility-holder>
+                        __FITMENT__
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <p>If you are still unsure of fitment, the rotors in this kit are <strong>282mm</strong> in outer diameter, <strong>65 mm</strong> in center hole diameter, and <strong>112 mm</strong> in wheel bolt circle diameter. If your vehicle is listed and the rotor diameter matches, this kit will fit.</p>
+        <p class="note">
+            <em>Your vehicle is not listed?</em><br>
+            Search in our store by entering your vehicle year, make, model, and position. Click the "Select Vehicle" button below.
+        </p>
+        <a href="https://www.autoshack.ca/" class="button" target="_blank">Select Vehicle</a>
+        <p class="note">
+            <em>To obtain this guarantee</em><br>
+            Make sure that you vehicle is found in the eBay Motor compatibility list above or in our compatibility summary.<br>
+            We assume all responsibility for the fitment information of our products.
+        </p>
+        <div class="product-detail">
+            __ATTRIBUTES__
+        </div>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="section">
+        <div class="section-title">PRODUCT DETAILS</div>
+        <img src="test1/TITLE LINE.png" class="sectiontitle-image">
+        <div class="product-detail_images">
+            <img src="test1/2XROTORS-FRONT.png" alt="2 x Rotors" class="product-icon">
+            <img src="test1/BRAKE PADS.png" alt="4 x Pads" class="product-icon">
+        </div>
+        <ul class="product-details-list">
+            <li>
+                <img src="test1/icon8.png" alt="Icon 1" class="feature-icon">
+                Engineered with Carbon-Enhanced iron castings for superior strength and performance.
+            </li>
+            <li>
+                <img src="test1/icon2.png" alt="Icon 2" class="feature-icon">
+                Bi-directional drilled and slotted for universal installation.
+            </li>
+            <li>
+                <img src="test1/icon7.png" alt="Icon 3" class="feature-icon">
+                Precision cross-drilled and slotted for maximum cooling and heat dissipation.
+            </li>
+            <li>
+                <img src="test1/icon9.png" alt="Icon 4" class="feature-icon">
+                360° anti-corrosion protection with electrophoretic coating on non-braking surfaces.
+            </li>
+            <li>
+                <img src="test1/icon1.png" alt="Icon 5" class="feature-icon">
+                Cross-hatched smooth surface for enhanced pad grip, even in wet conditions.
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- Shipping Section -->
+    <div class="section shipping-section">
+        <div class="section-title">SHIPPING</div>
+        <img src="test1/TITLE LINE.png" class="sectiontitle-image">
+        <div class="shipping-info">
+            <img src="test1/US TRANSIT.png" alt="Shipping Map" class="shipping-map">
+            <p class="note">Carriers may extend delivery by 24 hours for residential addresses.</p>
+        </div>
+    </div>
+
+    
+</div>
+
+
+<div class="container">
+
+    <!-- Return & Warranty Section -->
+    <div class="section">
+        <div class="section-title">RETURN & WARRANTY</div>
+        <img src="test1/TITLE LINE.png" class="sectiontitle-image">
+        <p>Customers should contact AutoShack within 4 days of receiving their shipment for return or exchange approval. We are committed to accepting returns for a full refund within 30 days of the invoice date, provided the items are unused and undamaged. Please note that restocking fees and return/replacement shipping costs may apply, except in cases of AutoShack's shipping errors, which are exempt from all fees and charges. <strong>Bundled items must be returned as a complete set.</strong></p>
+        <p>All our products come with a 6-month unlimited mileage warranty covering manufacturer defects not caused by negligence, poor maintenance, accidents, racing, improper installation, or servicing. Cosmetic issues, including rust, pitting, or zinc plating, are not covered. <a href="https://www.autoshack.ca/warranty-details" target="_blank">View Full Warranty Details</a>.</p>
+    </div>
+
+
+    <!-- Support Section -->
+    <div class="section">
+        <div class="section-title">SUPPORT</div>
+        <img src="test1/TITLE LINE.png" class="sectiontitle-image">
+        <p class="support-text">
+            Our exceptional before and after-sale service is here to support you every step of the way—whether you're selecting the right part, have questions upon receiving your order, or need installation tips. Contact us anytime; we're the trusted auto part service provider you can rely on.<br>
+            Send us a direct message via the 
+            <button onclick="scrollToTop()" class="ask-question-btn">Ask Question</button> 
+            at the top of the page.
+        </p>
+        <div class="business-hours">
+            <strong>Business Hours:</strong><br>
+            Monday to Friday: 8:00 am - 7:00 pm ET<br>
+            Saturday: 9:00 am - 6:00 pm ET<br>
+            Sunday: Closed
+        </div>
+    </div>
+</div>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+
+ <!-- Featured Category Section -->
+ <div class="featuredcaetgory-section">
+    <div class="featuredcategory-title">FEATURED CATEGORY</div>
+    <div class="category-grid">
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Side-Mirrors-/_i.html?_storecat=2687144015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_1.jpg" alt="Mirrors"/>
+        </a>
+        <a href="https://www.ebay.com/str/autoshackautopartsusa/Drive-Shafts/_i.html?_storecat=16153652015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_2.jpg" alt="Drive Shafts">
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Complete-Struts-/_i.html?_storecat=1818296015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_3.jpg" alt="Struts"/>
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Window-Regulators-/_i.html?_storecat=4504106015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_4.jpg" alt="Window Regulators"/>
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Brake-Calipers-/_i.html?_storecat=11086783015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_5.jpg" alt="Brake Calipers"/>
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Brake-Pads-/_i.html?_storecat=1818293015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_6.jpg" alt="Brake Pads"/>
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Brake-Rotors-/_i.html?_storecat=1818294015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_7.jpg" alt="Brake Rotors"/>
+        </a>
+        <a href="https://www.ebay.com/str/AutoShack-Auto-Parts-USA/Hub-Bearings-/_i.html?_storecat=1818297015" target="_blank">
+            <img src="https://www.autoshack.com/ebay/fp_8.jpg" alt="Hub Bearings"/>
+        </a>
+    </div>
+</div>
+
+
+<!-- Brand Story Section -->
+<div class="brandstory-section">
+    <p class="brandstory-text">
+        Our journey began over <strong style="color: #2635D9;">40 years</strong> ago, with a single goal: to keep people on the road, safely and confidently. What started as a small family business in a humble garage has since grown into a trusted name in the auto parts industry. But through all the expansion, one thing has never changed – our commitment to quality and care.<br><br>
+
+        Our brand was born out of a genuine love for automobiles and the belief that everyone deserves access to reliable, affordable parts. We would spend days in our garage, handpicking each part with a meticulous eye for detail, always ensuring that only the best products made their way to customers.<br><br>
+
+        Today, we remain deeply rooted in the values that started it all – dedication, honesty, and a passion for quality. Every part we sell, every customer we help, reminds us of where we began: in that small garage, with a dream to make a difference.
+
+        Here’s to the next 40 years of helping you stay on the road – we’re honored to be part of your journey.<br> <br>
+        <b><strong style="color: #2635D9; font-weight: 1700;">Get Back on Track With  <img src="test1/AutoShack-Logo-600x120px.png" alt="AutoShack logo" style="display: inline; height: 1.5em; vertical-align: middle;"></strong></b>
+    </p>
+</div>
+
+
+
+
+
+</body>
+</html>
